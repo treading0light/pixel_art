@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pixel art</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <main>
+    <div id="box">
+      
+    </div>
+
+    <div id="controls">
+      <div id="destroy" class="button">
+        <p>Destroy</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="external.js"></script>
+
+  <script>
+    const canvas = makeCanvas()
+
+    document.addEventListener('mousedown', makeActive)
+
+    document.addEventListener('mouseup', function() {
+      console.log('mouse up')
+      $('.pixel').off()
+    })
+
+    $('#destroy').on('click', function() {
+      console.log('trying to destroy')
+      $('.pixel').css('background-color', 'white')
+    })
+
+    // $('.pixel').on('click', function(evt) {
+    //   $(this).css('background-color', 'red')
+    // })
+  </script>
+
+</body>
+</html>
